@@ -1,0 +1,75 @@
+.accessibility-card .card-content {
+    padding: 16px;
+}
+
+.accessibility-card .option-group {
+    margin-bottom: 16px;
+}
+
+.accessibility-card .option-group h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.accessibility-card .font-size-controls button,
+.accessibility-card .action-button {
+    padding: 8px 16px;
+    margin-right: 8px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.accessibility-card .action-button:hover,
+.accessibility-card .font-size-controls button:hover {
+    background-color: #3B82F6;
+    color: white;
+    border-color: #3B82F6;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.toggle-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #3B82F6;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}

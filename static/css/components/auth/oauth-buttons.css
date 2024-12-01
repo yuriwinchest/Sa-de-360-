@@ -1,0 +1,41 @@
+/* /frontend/static/css/components/auth/oauth-buttons.css */
+.oauth-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.oauth-button {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+    color: var(--text-dark);
+}
+
+.oauth-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.oauth-govbr {
+    background: #1351B4;
+    border-color: #1351B4;
+    color: white;
+}
+
+.oauth-govbr:hover {
+    background: #0D47A1;
+}
+
+.oauth-google:hover {
+    border-color: #4285F4;
+}

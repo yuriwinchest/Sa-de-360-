@@ -1,0 +1,45 @@
+/* /frontend/static/css/components/exams/exam-summary.css */
+.exam-summary {
+    background-color: var(--bg-primary);
+    padding: var(--spacing-6);
+    border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-4);
+}
+
+.summary-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-4);
+    margin-top: var(--spacing-4);
+}
+
+.metric-card {
+    background-color: var(--bg-secondary);
+    padding: var(--spacing-4);
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: var(--spacing-2);
+}
+
+.metric-label {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}

@@ -1,0 +1,104 @@
+/* /frontend/static/css/animations.css */
+:root {
+    /* Animation Timing Variables */
+    --transition-fast: 150ms;
+    --transition-normal: 300ms;
+    --transition-slow: 500ms;
+    --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Animation Classes */
+.fade-enter {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity var(--transition-normal) var(--easing-standard),
+                transform var(--transition-normal) var(--easing-standard);
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity var(--transition-normal) var(--easing-standard),
+                transform var(--transition-normal) var(--easing-standard);
+}
+
+/* Component Specific Animations */
+.card {
+    transition: transform var(--transition-normal) var(--easing-standard),
+                box-shadow var(--transition-normal) var(--easing-standard);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.button-press {
+    transition: transform var(--transition-fast) var(--easing-standard);
+}
+
+.button-press:active {
+    transform: scale(0.95);
+}
+
+/* Loading States and Animations */
+.loading-spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--bg-tertiary);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Skeleton Loading Animation */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--bg-secondary) 25%,
+        var(--bg-tertiary) 37%,
+        var(--bg-secondary) 63%
+    );
+    background-size: 400% 100%;
+    animation: skeleton-loading 1.4s ease infinite;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+/* Notification Animation */
+.notification-slide {
+    animation: slide-in var(--transition-normal) var(--easing-standard);
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

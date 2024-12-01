@@ -1,0 +1,28 @@
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .profile-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-container {
+        padding: 10px;
+    }
+
+    .profile-photo {
+        width: 60px;
+        height: 60px;
+    }
+}

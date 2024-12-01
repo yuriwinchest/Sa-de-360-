@@ -1,0 +1,79 @@
+/* /frontend/static/css/components/exams/exam-list.css */
+.exam-list {
+    margin-top: var(--spacing-6);
+}
+
+.exam-filters {
+    margin-bottom: var(--spacing-4);
+    padding: var(--spacing-4);
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius-md);
+}
+
+.exam-filters select {
+    width: 100%;
+    padding: var(--spacing-2) var(--spacing-4);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.875rem;
+    color: var(--text-primary);
+}
+
+.exam-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.exam-item {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.exam-item:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.exam-info {
+    flex: 1;
+}
+
+.exam-info h3 {
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-bottom: var(--spacing-2);
+}
+
+.exam-date {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.exam-status {
+    display: inline-block;
+    padding: var(--spacing-1) var(--spacing-2);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.exam-status.available {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.exam-status.pending {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.exam-status.scheduled {
+    background-color: var(--info-color);
+    color: white;
+}

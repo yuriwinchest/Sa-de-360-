@@ -1,0 +1,26 @@
+/* /frontend/static/css/components/exams/exam-section.css */
+.exam-section {
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    margin: var(--spacing-4) 0;
+    overflow: hidden;
+}
+
+.exam-overview {
+    padding: var(--spacing-6);
+}
+
+/* Estilos do cabeçalho da seção */
+.exam-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-6);
+}
+
+.exam-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}

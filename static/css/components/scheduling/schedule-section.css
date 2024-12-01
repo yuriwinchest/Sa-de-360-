@@ -1,0 +1,240 @@
+/* /frontend/static/css/components/scheduling/schedule-section.css */
+.schedule-section {
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-6);
+}
+
+.schedule-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--spacing-6);
+    min-height: 600px;
+}
+
+/* Header Styles */
+.schedule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-6);
+    padding-bottom: var(--spacing-4);
+    border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.schedule-view-controls {
+    display: flex;
+    gap: var(--spacing-2);
+}
+
+.view-btn {
+    padding: var(--spacing-2) var(--spacing-4);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: var(--border-radius-md);
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.view-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Calendar Styles */
+.date-picker {
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-4);
+}
+
+.month-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-4);
+}
+
+.month-selector button {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: var(--spacing-2);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--spacing-2);
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+}
+
+.calendar-day:hover:not(.disabled) {
+    background-color: var(--primary-light);
+    color: white;
+}
+
+.calendar-day.selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.calendar-day.disabled {
+    color: var(--text-light);
+    cursor: not-allowed;
+}
+
+/* Time Slots Styles */
+.time-slots {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.time-slot {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: var(--spacing-4);
+    padding: var(--spacing-4);
+    border-radius: var(--border-radius-md);
+    background-color: var(--bg-secondary);
+}
+
+.time-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.appointments {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.appointment-card {
+    background-color: var(--bg-primary);
+    border-left: 4px solid var(--primary-color);
+    padding: var(--spacing-3);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.appointment-card.consultation {
+    border-left-color: var(--primary-color);
+}
+
+.appointment-card.exam {
+    border-left-color: var(--info-color);
+}
+
+.appointment-card.return {
+    border-left-color: var(--success-color);
+}
+
+/* Filter Sidebar Styles */
+.appointment-filters {
+    margin-top: var(--spacing-6);
+    padding: var(--spacing-4);
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius-md);
+}
+
+.appointment-filters h3 {
+    margin-bottom: var(--spacing-4);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.appointment-filters label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2) 0;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.appointment-filters input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border-radius: var(--border-radius-sm);
+    border: 2px solid var(--bg-tertiary);
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.appointment-filters input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.appointment-filters input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.75rem;
+}
+/* Add to schedule-section.css */
+@media (max-width: 1024px) {
+    .schedule-container {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-sidebar {
+        display: none;
+    }
+
+    .schedule-sidebar.active {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--bg-primary);
+        z-index: 100;
+        padding: var(--spacing-4);
+    }
+}
+
+@media (max-width: 768px) {
+    .time-slot {
+        grid-template-columns: 60px 1fr;
+    }
+
+    .appointment-card {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-view-controls {
+        display: none;
+    }
+
+    .time-slot {
+        grid-template-columns: 1fr;
+    }
+
+    .time-label {
+        margin-bottom: var(--spacing-2);
+    }
+}

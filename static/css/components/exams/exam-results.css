@@ -1,0 +1,57 @@
+/* /frontend/static/css/components/exams/exam-results.css */
+.exam-results {
+    margin-top: var(--spacing-6);
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-4);
+    padding-bottom: var(--spacing-4);
+    border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.result-info {
+    background-color: var(--bg-secondary);
+    padding: var(--spacing-4);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-4);
+}
+
+.result-data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-4);
+}
+
+.result-item {
+    padding: var(--spacing-4);
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--bg-tertiary);
+}
+
+.result-item h4 {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-2);
+}
+
+.result-value {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.result-reference {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: var(--spacing-2);
+}
+
+.result-actions {
+    display: flex;
+    gap: var(--spacing-4);
+    margin-top: var(--spacing-6);
+}

@@ -1,0 +1,74 @@
+/* /frontend/static/css/print.css */
+@media print {
+    /* Reset Backgrounds and Colors */
+    * {
+        background-color: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        filter: none !important;
+    }
+
+    /* Layout Adjustments */
+    body {
+        margin: 0;
+        padding: 2cm;
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    /* Hide Non-Essential Elements */
+    nav,
+    .sidebar,
+    .actions,
+    .no-print {
+        display: none !important;
+    }
+
+    /* Content Formatting */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+
+    img, table, figure {
+        page-break-inside: avoid;
+        max-width: 100% !important;
+    }
+
+    /* Links and References */
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 90%;
+    }
+
+    /* Page Breaks */
+    .page-break {
+        page-break-before: always;
+    }
+
+    /* Tables */
+    table {
+        border-collapse: collapse !important;
+    }
+
+    table td,
+    table th {
+        border: 1px solid #000 !important;
+        padding: 0.2cm !important;
+    }
+
+    /* Print-Specific Information */
+    .print-header {
+        display: block;
+        margin-bottom: 2cm;
+        text-align: center;
+    }
+
+    .print-footer {
+        display: block;
+        margin-top: 2cm;
+        text-align: center;
+        font-size: 10pt;
+    }
+}

@@ -1,0 +1,926 @@
+/* /frontend/static/css/pages/profile.css */
+
+/* Importação dos componentes específicos do perfil */
+@import '../components/profile/profile-header.css';
+@import '../components/profile/profile-cards.css';
+@import '../components/profile/profile-metrics.css';
+
+/* Estilos específicos da página de perfil */
+.profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-6);
+}
+
+.profile-content {
+    display: grid;
+    gap: var(--spacing-6);
+}
+
+/* Outros estilos específicos da página de perfil */
+
+/* =========================================
+   Estilos Base
+   ========================================= */
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #f6f9fc, #edf2f7);
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* =========================================
+     Header e Perfil
+     ========================================= */
+  header {
+    background: linear-gradient(135deg, #3182ce, #2b6cb0);
+    border-radius: 15px;
+    padding: 30px;
+    color: white;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .profile-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .profile-info {
+    text-align: left;
+  }
+  
+  .profile-info h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+  }
+  
+  .profile-info p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .logout-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+  }
+  
+  /* =========================================
+     Grid e Layout Base
+     ========================================= */
+  .category-title {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin: 30px 0 20px 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 10px;
+  }
+  
+  /* =========================================
+     Responsividade Base
+     ========================================= */
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+      text-align: center;
+      padding: 15px;
+    }
+  
+    .profile-section {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .profile-info {
+      text-align: center;
+    }
+  
+    .dashboard-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .app-container {
+      padding: 10px;
+    }
+  
+    .profile-photo {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .profile-info h1 {
+      font-size: 1.5rem;
+    }
+  }
+  /* =========================================
+   Estilos dos Cards
+   ========================================= */
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-header {
+    background: linear-gradient(135deg, #4299e1, #3182ce);
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .card-content {
+    padding: 20px;
+    display: none;
+    background: white;
+  }
+  
+  .card.active .card-content {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  /* Animação de fade in para o conteúdo do card */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* =========================================
+     Elementos Internos dos Cards
+     ========================================= */
+  .appointment-item,
+  .medication-item,
+  .exam-item {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .appointment-info h4,
+  .medication-info,
+  .exam-item h3 {
+    font-size: 1.1rem;
+    color: #2d3748;
+    margin-bottom: 5px;
+  }
+  
+  .appointment-info p,
+  .medication-schedule {
+    color: #718096;
+    font-size: 0.9rem;
+    margin: 3px 0;
+  }
+  
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 15px 0;
+  }
+  
+  .metric-item {
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .metric-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2b6cb0;
+  }
+  
+  .metric-label {
+    font-size: 0.875rem;
+    color: #4a5568;
+    margin-top: 5px;
+  }
+  
+  /* =========================================
+     Status Badges e Progress Bars
+     ========================================= */
+  .status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .status-badge.pending {
+    background: #fed7d7;
+    color: #c53030;
+  }
+  
+  .status-badge.active,
+  .status-badge.confirmed {
+    background: #c6f6d5;
+    color: #2f855a;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 5px;
+    margin: 10px 0;
+    overflow: hidden;
+  }
+  
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(to right, #4299e1, #3182ce);
+    border-radius: 5px;
+    transition: width 0.3s ease;
+  }
+  /* =========================================
+   Botões e Controles
+   ========================================= */
+.action-button {
+    width: 100%;
+    padding: 12px;
+    background: #4299e1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  .action-button:hover {
+    background: #3182ce;
+    transform: translateY(-2px);
+  }
+  
+  .action-button.secondary {
+    background: #e2e8f0;
+    color: #4a5568;
+  }
+  
+  .action-button.primary {
+    background: #3182ce;
+    color: white;
+  }
+  
+  .action-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* Controles de Calendário */
+  .calendar-container {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 12px;
+    background: #f8fafc;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .calendar-nav {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #3182ce;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .calendar-nav:hover {
+    background: rgba(49, 130, 206, 0.1);
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  
+  .calendar-day {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .calendar-day:hover:not(.disabled) {
+    background: #ebf8ff;
+    border-color: #3182ce;
+  }
+  
+  .calendar-day.selected {
+    background: #3182ce;
+    color: white;
+    border-color: #3182ce;
+  }
+  
+  .calendar-day.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #f7fafc;
+  }
+  
+  /* Time Slots */
+  .time-slot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .time-slot {
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .time-slot:hover:not(.disabled) {
+    background: #ebf8ff;
+    border-color: #3182ce;
+  }
+  
+  .time-slot.selected {
+    background: #3182ce;
+    color: white;
+    border-color: #3182ce;
+  }
+  
+  /* Form Controls */
+  select.action-button {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    padding-right: 40px;
+  }
+  
+  /* Botão de Emergência */
+  .emergency-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #e53e3e;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .emergency-button:hover {
+    transform: scale(1.1);
+    background: #c53030;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Feedback Visual */
+  .pulse {
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.4);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(229, 62, 62, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(229, 62, 62, 0);
+    }
+}
+
+
+.scheduling-system {
+    margin-top: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.scheduling-step {
+    padding: 20px;
+}
+
+.scheduling-progress {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    position: relative;
+    padding: 0 20px;
+}
+
+.scheduling-progress::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #e2e8f0;
+    z-index: 1;
+}
+
+.progress-step {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.progress-step.active .step-number {
+    background: #3182ce;
+    border-color: #3182ce;
+    color: white;
+}
+
+.progress-step.completed .step-number {
+    background: #48bb78;
+    border-color: #48bb78;
+    color: white;
+}
+
+/* =========================================
+   Componentes de Lista
+   ========================================= */
+.vaccination-list,
+.medication-list,
+.exam-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.vaccination-item,
+.medication-item,
+.exam-item {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.team-member img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* =========================================
+   Componentes de Chat
+   ========================================= */
+.chat-preview {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.chat-message {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.message-content {
+    flex: 1;
+}
+
+.message-content strong {
+    display: block;
+    color: #2d3748;
+    margin-bottom: 5px;
+}
+
+.message-content p {
+    color: #4a5568;
+    margin-bottom: 5px;
+}
+
+.message-content small {
+    color: #718096;
+    font-size: 0.8rem;
+}
+
+/* =========================================
+   Componentes de Documentos
+   ========================================= */
+.document-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.document-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.document-actions .action-button {
+    margin: 0;
+    padding: 8px 15px;
+}
+
+/* =========================================
+   Acessibilidade
+   ========================================= */
+.font-size-controls {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.font-control-btn {
+    padding: 8px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.font-control-btn:hover {
+    background: #ebf8ff;
+    border-color: #3182ce;
+}
+
+/* =========================================
+   Responsividade Adicional
+   ========================================= */
+@media (max-width: 640px) {
+    .scheduling-progress span {
+        display: none;
+    }
+
+    .document-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .document-actions {
+        width: 100%;
+    }
+
+    .document-actions .action-button {
+        flex: 1;
+    }
+
+    .time-slot-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* =========================================
+   Animações e Transições
+   ========================================= */
+.fade-enter {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 300ms, transform 300ms;
+}
+/* Estilos gerais para todas as imagens em cards */
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Estilos para imagens de perfil no cabeçalho */
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos para imagens em cards de membros da família */
+.family-member img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3182ce;
+}
+
+/* Estilos para imagens da equipe médica */
+.team-member img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #4299e1;
+}
+
+/* Estilos para imagens em mensagens de chat */
+.chat-message img.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+/* Estilos para imagens em documentos */
+.document-preview img {
+    max-height: 200px;
+    width: auto;
+    object-fit: contain;
+    margin: 10px 0;
+}
+
+/* Estilos para ícones de status */
+.status-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Estilos para imagens em grupos de apoio */
+.support-group img {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* Estilos para imagens em exames */
+.exam-image img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: contain;
+    background-color: #f8fafc;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Estilos para QR Code */
+.qr-code img {
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+    display: block;
+}
+
+/* Animação suave ao carregar imagens */
+.card img {
+    transition: opacity 0.3s ease;
+}
+
+.card img.loading {
+    opacity: 0.5;
+}
+
+/* Placeholder para imagens que não carregaram */
+.card img.error {
+    background-color: #f8fafc;
+    padding: 10px;
+    position: relative;
+}
+
+.card img.error::after {
+    content: '🖼';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    .profile-photo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .family-member img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .team-member img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .exam-image img {
+        max-height: 200px;
+    }
+}
+
+/* Estilos para hover em imagens clicáveis */
+.card img[onclick],
+.card img[role="button"] {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.card img[onclick]:hover,
+.card img[role="button"]:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para imagens em grid */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.image-grid img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Estilos para modo escuro */
+@media (prefers-color-scheme: dark) {
+    .card img {
+        filter: brightness(0.9);
+    }
+
+    .card img.error {
+        background-color: #2d3748;
+    }
+}

@@ -1,0 +1,131 @@
+/* /frontend/static/css/components/teleconsult/teleconsult.css */
+.teleconsult-section {
+    background-color: var(--bg-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.teleconsult-container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--spacing-4);
+    height: calc(100vh - 64px);
+    padding: var(--spacing-4);
+}
+
+.video-container {
+    position: relative;
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+}
+
+.main-video {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-tertiary);
+    position: relative;
+}
+
+.main-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.self-video {
+    position: absolute;
+    right: var(--spacing-4);
+    bottom: var(--spacing-4);
+    width: 240px;
+    height: 180px;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.self-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.consultation-controls {
+    position: absolute;
+    bottom: var(--spacing-6);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--spacing-4);
+    padding: var(--spacing-4);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: var(--border-radius-full);
+}
+
+.control-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background-color: var(--bg-tertiary);
+}
+
+.control-btn.end-call {
+    background-color: var(--error-color);
+    color: white;
+}
+
+.control-btn.end-call:hover {
+    background-color: darkred;
+}
+
+.consultation-sidebar {
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.chat-messages {
+    flex: 1;
+    padding: var(--spacing-4);
+    overflow-y: auto;
+}
+
+.chat-input {
+    padding: var(--spacing-4);
+    display: flex;
+    gap: var(--spacing-2);
+}
+
+.medical-notes {
+    height: 300px;
+    padding: var(--spacing-4);
+}
+
+.medical-notes textarea {
+    width: 100%;
+    height: 100%;
+    padding: var(--spacing-3);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: var(--border-radius-md);
+    resize: none;
+}

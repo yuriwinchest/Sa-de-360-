@@ -1,0 +1,45 @@
+/* /frontend/static/css/themes/dark-mode.css */
+[data-theme="dark"] {
+    /* Color Overrides for Dark Mode */
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --bg-tertiary: #404040;
+    
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --text-light: #666666;
+    
+    /* Adjusted Shadow Variables */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    
+    /* Component-Specific Dark Mode Adjustments */
+    .card {
+        background-color: var(--bg-secondary);
+        border-color: var(--bg-tertiary);
+    }
+    
+    .calendar-day {
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+    }
+    
+    .calendar-day.disabled {
+        color: var(--text-light);
+    }
+    
+    .appointment-card {
+        background-color: var(--bg-secondary);
+    }
+    
+    .input, select, textarea {
+        background-color: var(--bg-tertiary);
+        color: var(--text-primary);
+        border-color: var(--bg-tertiary);
+    }
+    
+    .input:focus, select:focus, textarea:focus {
+        border-color: var(--primary-color);
+    }
+}

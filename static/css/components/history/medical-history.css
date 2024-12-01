@@ -1,0 +1,119 @@
+/* /frontend/static/css/components/history/medical-history.css */
+.medical-history {
+    padding: var(--spacing-6);
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-6);
+    padding-bottom: var(--spacing-4);
+    border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.history-timeline {
+    position: relative;
+    padding-left: var(--spacing-8);
+}
+
+.history-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--primary-light);
+}
+
+.year-section {
+    margin-bottom: var(--spacing-8);
+}
+
+.year-section h3 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-4);
+    position: relative;
+}
+
+.year-section h3::before {
+    content: '';
+    position: absolute;
+    left: calc(-1 * var(--spacing-8) + 1px);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    border: 3px solid var(--bg-primary);
+}
+
+.medical-event {
+    position: relative;
+    margin-bottom: var(--spacing-4);
+    padding: var(--spacing-4);
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius-md);
+}
+
+.medical-event::before {
+    content: '';
+    position: absolute;
+    left: calc(-1 * var(--spacing-8) + 1px);
+    top: var(--spacing-4);
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--primary-light);
+    border-radius: 50%;
+}
+
+.event-date {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-2);
+}
+
+.event-content h4 {
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-bottom: var(--spacing-2);
+}
+
+.event-content p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.event-attachments {
+    margin-top: var(--spacing-4);
+    display: flex;
+    gap: var(--spacing-2);
+    flex-wrap: wrap;
+}
+
+.attachment-link {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--spacing-2) var(--spacing-3);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: var(--border-radius-sm);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.attachment-link:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+}
