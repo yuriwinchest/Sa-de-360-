@@ -1,0 +1,61 @@
+<!-- /frontend/templates/components/exams/exam-section.html -->
+<section class="exam-section">
+    <div class="exam-overview">
+        {% include 'components/exams/exam-summary.html' %}
+        {% include 'components/exams/exam-list.html' %}
+        {% include 'components/exams/exam-results.html' %}
+        {% include 'components/exams/exam-schedule.html' %}
+    </div>
+</section>
+
+<!-- /frontend/templates/components/exams/exam-summary.html -->
+<div class="exam-summary">
+    <div class="summary-header">
+        <h2>Exames Médicos</h2>
+        <button class="action-button" onclick="scheduleNewExam()">
+            Solicitar Novo Exame
+        </button>
+    </div>
+    
+    <div class="summary-metrics">
+        <div class="metric-card">
+            <span class="metric-value">3</span>
+            <span class="metric-label">Exames Pendentes</span>
+        </div>
+        <div class="metric-card">
+            <span class="metric-value">2</span>
+            <span class="metric-label">Resultados Disponíveis</span>
+        </div>
+    </div>
+</div>
+
+<!-- /frontend/templates/components/exams/exam-list.html -->
+<div class="exam-list">
+    <div class="exam-filters">
+        <select onchange="filterExams(this.value)">
+            <option value="all">Todos os Exames</option>
+            <option value="pending">Pendentes</option>
+            <option value="completed">Realizados</option>
+            <option value="scheduled">Agendados</option>
+        </select>
+    </div>
+
+    <div class="exam-items">
+        {% for exam in exams %}
+        <div class="exam-item">
+            <div class="exam-info">
+                <h3>{{ exam.name }}</h3>
+                <p class="exam-date">{{ exam.date }}</p>
+                <span class="exam-status {{ exam.status }}">{{ exam.status_text }}</span>
+            </div>
+            <div class="exam-actions">
+                {% if exam.status == 'available' %}
+                <button onclick="viewResult('{{ exam.id }}')">Ver Resultado</button>
+                {% elif exam.status == 'scheduled' %}
+                <button onclick="viewAppointment('{{ exam.id }}')">Ver Agendamento</button>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

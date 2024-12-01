@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S360 - Saúde 360</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        {% include 'components/auth/login-header.html' %}
+        {% include 'components/auth/login-form.html' %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/services/auth.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/components/login.js') }}"></script>
+</body>
+</html>

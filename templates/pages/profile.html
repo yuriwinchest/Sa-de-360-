@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Perfil do Paciente - Sistema Integrado de Saúde{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/profile.css') }}">
+{% endblock %}
+
+{% block content %}
+    <!-- Seção de Agendamentos -->
+    {% include 'components/appointments/appointment-card.html' %}
+
+    <!-- Seção de Saúde -->
+    {% include 'components/health/health-section.html' %}
+
+    <!-- Seção de Prevenção -->
+    {% include 'components/prevention/prevention-section.html' %}
+
+    <!-- Seção de Comunicação -->
+    {% include 'components/communication/communication-section.html' %}
+
+    <!-- Seção de Emergência -->
+    {% include 'components/emergency/emergency-section.html' %}
+
+    <!-- Seção de Gestão Familiar -->
+    {% include 'components/family/family-section.html' %}
+
+    <!-- Seção de Integração SUS -->
+    {% include 'components/sus/sus-integration-section.html' %}
+
+    <!-- Seção de Acessibilidade -->
+    {% include 'components/accessibility/accessibility-card.html' %}
+
+    <!-- Seção de Programas de Saúde -->
+    {% include 'components/programs/health-programs-section.html' %}
+{% endblock %}
+
+
+
+
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/pages/profile.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/components/accessibility.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/components/profile.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/components/health.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/components/prevention.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/components/communication.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/components/emergency.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/components/family.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/components/sus.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/components/programs.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/pages/profile.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/user-info.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/appointments.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/medications.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/exams.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/vital-signs.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/vaccination.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/physical-activity.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/nutrition.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/medical-chat.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/support-groups.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/health-guides.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/nearby-units.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/emergency-contacts.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/family-profiles.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/family-vaccination.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/sus-card.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/sisreg.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/accessibility.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/family-health.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/specific-programs.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/emergency-button.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cards.js') }}"></script>
+<script src="{{ url_for('static', filename='js/scheduling.js') }}"></script>
+<script src="{{ url_for('static', filename='js/notifications.js') }}"></script>
+<script src="{{ url_for('static', filename='js/accessibility.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/toggleCard.js') }}"></script>
+{% endblock %}

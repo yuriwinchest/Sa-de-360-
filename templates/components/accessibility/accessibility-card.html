@@ -1,0 +1,73 @@
+<div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-icon">👁</div>
+        <div class="card-title">Acessibilidade</div>
+    </div>
+    <div class="card-content">
+        <div class="accessibility-options">
+            <div class="option-group">
+                <h3>Tamanho da Fonte</h3>
+                <div class="font-size-controls">
+                    <button class="control-btn" onclick="changeFontSize('decrease')" 
+                            aria-label="Diminuir tamanho da fonte">A-</button>
+                    <button class="control-btn" onclick="changeFontSize('reset')" 
+                            aria-label="Restaurar tamanho padrão da fonte">A</button>
+                    <button class="control-btn" onclick="changeFontSize('increase')" 
+                            aria-label="Aumentar tamanho da fonte">A+</button>
+                </div>
+                <p class="option-description">
+                    Ajuste o tamanho do texto para melhor leitura
+                </p>
+            </div>
+
+            <div class="option-group">
+                <h3>Contraste e Cores</h3>
+                <div class="contrast-controls">
+                    <button class="action-button" onclick="toggleHighContrast()" 
+                            aria-label="Alternar alto contraste">
+                        Alto Contraste
+                    </button>
+                    <button class="action-button" onclick="toggleColorblindMode()" 
+                            aria-label="Modo daltônico">
+                        Modo Daltônico
+                    </button>
+                </div>
+                <p class="option-description">
+                    Ajuste as cores para melhor visualização
+                </p>
+            </div>
+
+            <div class="option-group">
+                <h3>Navegação por Voz</h3>
+                <div class="voice-controls">
+                    <button class="action-button" onclick="toggleVoiceCommands()" 
+                            aria-label="Ativar comandos de voz">
+                        Ativar Comandos de Voz
+                    </button>
+                    <button class="action-button secondary" onclick="configureVoiceCommands()" 
+                            aria-label="Configurar comandos de voz">
+                        Configurar Comandos
+                    </button>
+                </div>
+                <p class="option-description">
+                    Use sua voz para navegar pelo sistema
+                </p>
+            </div>
+
+            <div class="option-group">
+                <h3>Leitor de Tela</h3>
+                <div class="screen-reader-controls">
+                    <label class="toggle-switch">
+                        <input type="checkbox" onchange="toggleScreenReader(this)" 
+                               aria-label="Ativar leitor de tela">
+                        <span class="slider round"></span>
+                        <span class="toggle-label">Descrições Automáticas</span>
+                    </label>
+                </div>
+                <p class="option-description">
+                    Ative o leitor de tela para auxílio na navegação
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

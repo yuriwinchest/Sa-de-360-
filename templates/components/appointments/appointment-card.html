@@ -1,0 +1,13 @@
+<div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-icon">📅</div>
+        <div class="card-title">Agendamentos</div>
+    </div>
+    <div class="card-content">
+        {% include 'components/appointments/upcoming-appointments.html' %}
+        {% include 'components/appointments/scheduling-system.html' %}
+        <button class="action-button primary" onclick="startScheduling()">
+            Agendar Nova Consulta
+        </button>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-icon">💉</div>
+        <div class="card-title">Vacinação Familiar</div>
+    </div>
+    <div class="card-content">
+        <div class="family-vaccination">
+            <select class="action-button" style="margin-bottom: 15px;" onchange="updateVaccinationCalendar(this.value)">
+                <option value="">Selecione o Familiar</option>
+                <option value="joao">João Silva (Filho)</option>
+                <option value="ana">Ana Silva (Filha)</option>
+                <option value="jose">José Silva (Marido)</option>
+            </select>
+            <div class="vaccination-calendar">
+                <h3>Próximas Vacinas</h3>
+                <ul class="vaccination-list">
+                    <li>
+                        <span>HPV - 2ª dose (João)</span>
+                        <span>15/12/2024</span>
+                    </li>
+                    <li>
+                        <span>Meningite (Ana)</span>
+                        <span>20/12/2024</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

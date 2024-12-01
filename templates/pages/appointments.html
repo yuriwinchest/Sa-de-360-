@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Agendamentos - Saúde 360{% endblock %}
+
+{% block content %}
+<div class="appointments-container">
+    <div class="appointments-header">
+        <h1>Meus Agendamentos</h1>
+        <button class="new-appointment-btn" onclick="startScheduling()">
+            Novo Agendamento
+        </button>
+    </div>
+
+    <div class="appointments-filter">
+        <div class="filter-group">
+            <label for="appointmentType">Tipo:</label>
+            <select id="appointmentType" onchange="filterAppointments()">
+                <option value="all">Todos</option>
+                <option value="consultation">Consultas</option>
+                <option value="exam">Exames</option>
+                <option value="vaccine">Vacinas</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="appointmentStatus">Status:</label>
+            <select id="appointmentStatus" onchange="filterAppointments()">
+                <option value="all">Todos</option>
+                <option value="scheduled">Agendados</option>
+                <option value="completed">Realizados</option>
+                <option value="cancelled">Cancelados</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="appointments-list">
+        {% include 'components/appointments/appointments-list.html' %}
+    </div>
+
+    <div class="appointments-calendar">
+        {% include 'components/appointments/calendar-view.html' %}
+    </div>
+</div>
+{% endblock %}

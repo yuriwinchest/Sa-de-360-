@@ -1,0 +1,27 @@
+<div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-icon">💳</div>
+        <div class="card-title">Cartão SUS Digital</div>
+    </div>
+    <div class="card-content">
+        <div class="sus-card">
+            <div class="qr-code-container">
+                <img src="{{ url_for('static', filename='assets/images/qr-code-sus.webp') }}" 
+                     alt="QR Code do Cartão SUS">
+            </div>
+            <div class="card-details">
+                <p><strong>Nome:</strong> {{ user.name }}</p>
+                <p><strong>CNS:</strong> {{ user.cns }}</p>
+                <p><strong>Data de Nascimento:</strong> {{ user.birth_date }}</p>
+            </div>
+            <div class="card-actions">
+                <button class="action-button" onclick="shareSUSCard()">
+                    Compartilhar Cartão
+                </button>
+                <button class="action-button secondary" onclick="downloadSUSCard()">
+                    Baixar Versão PDF
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

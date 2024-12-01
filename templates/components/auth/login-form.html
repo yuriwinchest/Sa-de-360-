@@ -1,0 +1,26 @@
+<div class="login-form">
+    <div class="oauth-buttons">
+        <button class="oauth-button oauth-govbr">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M12 2L1 7v2l11-5 11 5V7L12 2zm0 3L3 8.5v2L12 6l9 4.5v-2L12 5zm0 3L4 10.5v2L12 9l8 3.5v-2L12 8zm0 3L5 12.5v2L12 12l7 2.5v-2L12 11zm0 3L6 14.5v2L12 15l6 1.5v-2L12 14z"/>
+            </svg>
+            <span style="margin-left: 12px;">Entrar com gov.br</span>
+        </button>
+
+        <button class="oauth-button oauth-google">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <!-- Google SVG content here -->
+            </svg>
+            <span style="margin-left: 12px;">Continuar com Google</span>
+        </button>
+    </div>
+
+    <div class="divider">ou acesse com seus dados</div>
+
+    <form id="loginForm">
+        {% include 'components/auth/login-inputs.html' %}
+        {% include 'components/auth/login-options.html' %}
+        <button type="submit" class="login-button">Entrar</button>
+        {% include 'components/auth/register-link.html' %}
+    </form>
+</div>

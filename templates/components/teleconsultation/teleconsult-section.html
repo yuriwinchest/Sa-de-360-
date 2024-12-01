@@ -1,0 +1,51 @@
+<!-- /frontend/templates/components/teleconsultation/teleconsult-section.html -->
+<section class="teleconsult-section">
+    <div class="teleconsult-container">
+        <div class="video-container">
+            <div class="main-video">
+                <video id="doctorVideo" autoplay muted></video>
+                <div class="participant-info">
+                    <span>Dr. Silva - Clínico Geral</span>
+                </div>
+            </div>
+            <div class="self-video">
+                <video id="selfVideo" autoplay muted></video>
+            </div>
+        </div>
+
+        <div class="consultation-controls">
+            <button class="control-btn" onclick="toggleMicrophone()">
+                <span class="icon">🎤</span>
+            </button>
+            <button class="control-btn" onclick="toggleCamera()">
+                <span class="icon">📹</span>
+            </button>
+            <button class="control-btn end-call" onclick="endConsultation()">
+                <span class="icon">📞</span>
+            </button>
+            <button class="control-btn" onclick="shareScreen()">
+                <span class="icon">💻</span>
+            </button>
+            <button class="control-btn" onclick="openChat()">
+                <span class="icon">💬</span>
+            </button>
+        </div>
+
+        <div class="consultation-sidebar">
+            <div class="chat-panel">
+                <div class="chat-messages">
+                    <!-- Messages will be loaded dynamically -->
+                </div>
+                <div class="chat-input">
+                    <input type="text" placeholder="Digite sua mensagem...">
+                    <button onclick="sendMessage()">Enviar</button>
+                </div>
+            </div>
+
+            <div class="medical-notes">
+                <h3>Anotações da Consulta</h3>
+                <textarea placeholder="Faça suas anotações aqui..."></textarea>
+            </div>
+        </div>
+    </div>
+</section>

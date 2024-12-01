@@ -1,0 +1,41 @@
+<div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-icon">🏥</div>
+        <div class="card-title">SISREG</div>
+    </div>
+    <div class="card-content">
+        <div class="sisreg-info">
+            <h3>Regulações Ativas</h3>
+            <div class="regulation-list">
+                <div class="regulation-item">
+                    <div class="regulation-info">
+                        <span class="regulation-type">Consulta Cardiologia</span>
+                        <span class="status-badge pending">Em análise</span>
+                        <p class="regulation-details">
+                            Solicitado em: 25/11/2024
+                            <br>
+                            Prioridade: Alta
+                        </p>
+                    </div>
+                </div>
+                <div class="regulation-item">
+                    <div class="regulation-info">
+                        <span class="regulation-type">Exame Ressonância</span>
+                        <span class="status-badge active">Aprovado</span>
+                        <p class="regulation-details">
+                            Aprovado para: 15/12/2024
+                            <br>
+                            Local: Hospital Regional
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="sisreg-actions">
+                <button class="action-button">Ver Detalhes</button>
+                <button class="action-button secondary" onclick="showSISREGHistory()">
+                    Histórico de Solicitações
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

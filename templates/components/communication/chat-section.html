@@ -1,0 +1,53 @@
+<div class="chat-container">
+    <div class="chat-sidebar">
+        <div class="chat-contacts">
+            <div class="chat-contact active">
+                <img src="{{ url_for('static', filename='assets/images/doctors/dr-silva.jpg') }}" 
+                     alt="Dr. Silva">
+                <div class="contact-info">
+                    <h4>Dr. Silva</h4>
+                    <p>Clínico Geral</p>
+                </div>
+                <span class="unread-badge">2</span>
+            </div>
+            <!-- Outros contatos -->
+        </div>
+    </div>
+
+    <div class="chat-main">
+        <div class="chat-header">
+            <div class="chat-user-info">
+                <img src="{{ url_for('static', filename='assets/images/doctors/dr-silva.jpg') }}" 
+                     alt="Dr. Silva">
+                <div>
+                    <h3>Dr. Silva</h3>
+                    <p>Online</p>
+                </div>
+            </div>
+            <div class="chat-actions">
+                <button class="video-call-btn" onclick="startVideoCall()">
+                    <span class="icon">🎥</span>
+                </button>
+                <button class="more-options-btn" onclick="showChatOptions()">
+                    <span class="icon">⋮</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="chat-messages">
+            <!-- Mensagens serão carregadas dinamicamente -->
+        </div>
+
+        <div class="chat-input">
+            <textarea placeholder="Digite sua mensagem..." rows="1"></textarea>
+            <div class="input-actions">
+                <button class="attach-btn" onclick="attachFile()">
+                    <span class="icon">📎</span>
+                </button>
+                <button class="send-btn" onclick="sendMessage()">
+                    <span class="icon">➤</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

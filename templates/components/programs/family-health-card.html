@@ -1,0 +1,44 @@
+<div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-icon">🏠</div>
+        <div class="card-title">Saúde da Família</div>
+    </div>
+    <div class="card-content">
+        <div class="psf-info">
+            <h3>Sua Equipe</h3>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='assets/images/doctors/dr-silva.jpg') }}" 
+                         alt="Dr. Silva">
+                    <div>
+                        <h4>Dr. Silva</h4>
+                        <p>Médico da Família</p>
+                        <p class="contact-info">CRM: 12345</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='assets/images/staff/enfermeira-ana.jpg') }}" 
+                         alt="Enfermeira Ana">
+                    <div>
+                        <h4>Enfermeira Ana</h4>
+                        <p>Enfermeira Responsável</p>
+                        <p class="contact-info">COREN: 54321</p>
+                    </div>
+                </div>
+            </div>
+            <div class="last-visit">
+                <h4>Última Visita Domiciliar</h4>
+                <p>Data: 10/11/2024</p>
+                <p>Profissional: ACS Maria Santos</p>
+            </div>
+            <div class="psf-actions">
+                <button class="action-button" onclick="scheduleVisit()">
+                    Agendar Visita
+                </button>
+                <button class="action-button secondary" onclick="viewTeamSchedule()">
+                    Ver Agenda da Equipe
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

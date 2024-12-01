@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}S360 - Saúde 360{% endblock %}</title>
+
+    <!-- CSS Base -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/utilities.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+
+    <!-- CSS Componentes -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/layout/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/layout/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/interactive.css') }}">
+
+    <!-- CSS Módulos -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/exams/exam-section.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/exams/exam-summary.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/exams/exam-list.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/exams/exam-results.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/scheduling/schedule-section.css') }}">
+
+    <!-- CSS Acessibilidade e Temas -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/accessibility.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/themes/dark-mode.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/print.css') }}" media="print">
+
+    <!-- CSS Extra específico da página -->
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <div class="app-container">
+        {% include 'components/layout/header.html' %}
+        
+        <main class="main-content">
+            {% block content %}{% endblock %}
+        </main>
+
+        {% block emergency_button %}
+            <button class="emergency-button" onclick="handleEmergency()">🚨</button>
+        {% endblock %}
+    </div>
+
+    <!-- Scripts Base -->
+   <!-- Scripts Base -->
+<script src="{{ url_for('static', filename='js/base.js') }}"></script>
+<script src="{{ url_for('static', filename='js/utils/accessibility.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cards.js') }}"></script>
+<script src="{{ url_for('static', filename='js/scheduling.js') }}"></script>
+<script src="{{ url_for('static', filename='js/notifications.js') }}"></script>
+
+<!-- Scripts Componentes -->
+<script src="{{ url_for('static', filename='js/components/user-info.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/appointments.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/medications.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/exams.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/vital-signs.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/vaccination.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/physical-activity.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/nutrition.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/medical-chat.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/support-groups.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/health-guides.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/nearby-units.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/emergency-contacts.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/family-profiles.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/family-vaccination.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/sus-card.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/sisreg.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/family-health.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/specific-programs.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/emergency-button.js') }}"></script>
+
+<!-- Scripts Extras específicos da página -->
+{% block extra_js %}{% endblock %}
+
+  
+</body>
+</html>

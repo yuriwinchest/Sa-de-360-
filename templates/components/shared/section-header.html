@@ -1,0 +1,13 @@
+<div class="section-header">
+    <div class="section-title">
+        <h2>{{ title }}</h2>
+        {% if subtitle %}
+        <p class="section-subtitle">{{ subtitle }}</p>
+        {% endif %}
+    </div>
+    {% if has_actions %}
+    <div class="section-actions">
+        {% block section_actions %}{% endblock %}
+    </div>
+    {% endif %}
+</div>

@@ -1,0 +1,28 @@
+<header>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="{{ url_for('static', filename='assets/images/logo.svg') }}" alt="Saúde 360 Logo">
+                <span>Saúde 360</span>
+            </div>
+            <div class="nav-links">
+                <a href="{{ url_for('dashboard') }}" class="nav-link">Dashboard</a>
+                <a href="{{ url_for('appointments') }}" class="nav-link">Agendamentos</a>
+                <a href="{{ url_for('health') }}" class="nav-link">Minha Saúde</a>
+                <a href="{{ url_for('family') }}" class="nav-link">Família</a>
+            </div>
+            <div class="nav-user">
+                <div class="user-profile" onclick="toggleUserMenu()">
+                    <img src="{{ user.photo_url }}" alt="Foto de perfil">
+                    <span>{{ user.name }}</span>
+                </div>
+                <div class="user-menu" id="userMenu">
+                    <a href="{{ url_for('profile') }}">Meu Perfil</a>
+                    <a href="{{ url_for('settings') }}">Configurações</a>
+                    <a href="{{ url_for('help') }}">Ajuda</a>
+                    <a href="{{ url_for('logout') }}" class="logout">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

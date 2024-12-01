@@ -1,0 +1,75 @@
+<div class="vital-signs-monitor">
+    <div class="monitor-grid">
+        <div class="vital-sign-card">
+            <div class="vital-sign-header">
+                <span class="vital-sign-icon">❤️</span>
+                <h3>Pressão Arterial</h3>
+            </div>
+            <div class="vital-sign-value {% if last_pressure.is_normal %}normal{% else %}alert{% endif %}">
+                {{ last_pressure.systolic }}/{{ last_pressure.diastolic }}
+                <span class="unit">mmHg</span>
+            </div>
+            <div class="vital-sign-info">
+                <span class="timestamp">Última medição: {{ last_pressure.timestamp|format_datetime }}</span>
+                <button class="record-btn" onclick="recordVitalSign('pressure')">
+                    Registrar Nova Medição
+                </button>
+            </div>
+        </div>
+
+        <div class="vital-sign-card">
+            <div class="vital-sign-header">
+                <span class="vital-sign-icon">📈</span>
+                <h3>Glicemia</h3>
+            </div>
+            <div class="vital-sign-value {% if last_glucose.is_normal %}normal{% else %}alert{% endif %}">
+                {{ last_glucose.value }}
+                <span class="unit">mg/dL</span>
+            </div>
+            <div class="vital-sign-info">
+                <span class="timestamp">Última medição: {{ last_glucose.timestamp|format_datetime }}</span>
+                <button class="record-btn" onclick="recordVitalSign('glucose')">
+                    Registrar Nova Medição
+                </button>
+            </div>
+        </div>
+
+        <div class="vital-sign-card">
+            <div class="vital-sign-header">
+                <span class="vital-sign-icon">🫁</span>
+                <h3>Saturação O₂</h3>
+            </div>
+            <div class="vital-sign-value {% if last_oxygen.is_normal %}normal{% else %}alert{% endif %}">
+                {{ last_oxygen.value }}
+                <span class="unit">%</span>
+            </div>
+            <div class="vital-sign-info">
+                <span class="timestamp">Última medição: {{ last_oxygen.timestamp|format_datetime }}</span>
+                <button class="record-btn" onclick="recordVitalSign('oxygen')">
+                    Registrar Nova Medição
+                </button>
+            </div>
+        </div>
+
+        <div class="vital-sign-trends">
+            <h4>Tendências</h4>
+            <div class="trend-chart" id="vitalSignsTrend">
+                <!-- Chart will be rendered by JavaScript -->
+            </div>
+            <div class="trend-legend">
+                <span class="trend-item">
+                    <span class="trend-color pressure"></span>
+                    Pressão Arterial
+                </span>
+                <span class="trend-item">
+                    <span class="trend-color glucose"></span>
+                    Glicemia
+                </span>
+                <span class="trend-item">
+                    <span class="trend-color oxygen"></span>
+                    Saturação
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

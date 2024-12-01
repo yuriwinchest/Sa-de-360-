@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Saúde 360{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <div class="dashboard-summary">
+        <h1>Bem-vindo(a), {{ user.name }}</h1>
+        <p>Resumo de suas atividades e próximos compromissos</p>
+    </div>
+
+    <div class="quick-actions">
+        <h2>Ações Rápidas</h2>
+        <div class="action-grid">
+            <button onclick="scheduleAppointment()">Agendar Consulta</button>
+            <button onclick="viewExams()">Ver Exames</button>
+            <button onclick="registerVitals()">Registrar Sinais Vitais</button>
+            <button onclick="startTeleconsultation()">Iniciar Teleconsulta</button>
+        </div>
+    </div>
+
+    <div class="notifications-panel">
+        <h2>Notificações Importantes</h2>
+        {% include 'components/dashboard/notifications-list.html' %}
+    </div>
+
+    <div class="upcoming-events">
+        <h2>Próximos Eventos</h2>
+        {% include 'components/dashboard/events-calendar.html' %}
+    </div>
+</div>
+{% endblock %}

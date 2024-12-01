@@ -1,0 +1,37 @@
+<!-- /frontend/templates/components/history/medical-history-section.html -->
+<section class="medical-history">
+    <div class="history-header">
+        <h2>Histórico Médico</h2>
+        <div class="history-actions">
+            <button class="action-button" onclick="downloadHistory()">
+                Exportar Histórico
+            </button>
+        </div>
+    </div>
+
+    <div class="history-timeline">
+        {% for year in medical_history %}
+        <div class="year-section">
+            <h3>{{ year.year }}</h3>
+            {% for event in year.events %}
+            <div class="medical-event">
+                <div class="event-date">{{ event.date }}</div>
+                <div class="event-content">
+                    <h4>{{ event.title }}</h4>
+                    <p>{{ event.description }}</p>
+                    {% if event.attachments %}
+                    <div class="event-attachments">
+                        {% for attachment in event.attachments %}
+                        <a href="{{ attachment.url }}" class="attachment-link">
+                            {{ attachment.name }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</section>

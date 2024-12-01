@@ -1,0 +1,20 @@
+<div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-icon">💬</div>
+        <div class="card-title">Chat Médico</div>
+    </div>
+    <div class="card-content">
+        <div class="chat-preview">
+            <div class="chat-message">
+                <img src="{{ url_for('static', filename='assets/images/doctors/dr-silva.jpg') }}" 
+                     alt="Dr. Silva" class="message-avatar">
+                <div class="message-content">
+                    <strong>Dr. Silva</strong>
+                    <p>Como está se sentindo após a medicação?</p>
+                    <small>Hoje, 14:30</small>
+                </div>
+            </div>
+        </div>
+        <button class="action-button">Abrir Chat</button>
+    </div>
+</div>

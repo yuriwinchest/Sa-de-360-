@@ -1,0 +1,34 @@
+<div class="notifications-panel">
+    <div class="notifications-header">
+        <h3>Notificações</h3>
+        <div class="notification-filters">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="appointments">Consultas</button>
+            <button class="filter-btn" data-filter="exams">Exames</button>
+            <button class="filter-btn" data-filter="medications">Medicamentos</button>
+        </div>
+    </div>
+
+    <div class="notifications-list">
+        {% for notification in notifications %}
+        <div class="notification-item {{ notification.type }}">
+            <div class="notification-icon">
+                {% if notification.type == 'appointment' %}🗓️
+                {% elif notification.type == 'exam' %}🔬
+                {% elif notification.type == 'medication' %}💊
+                {% endif %}
+            </div>
+            <div class="notification-content">
+                <h4>{{ notification.title }}</h4>
+                <p>{{ notification.message }}</p>
+                <span class="notification-time">{{ notification.time }}</span>
+            </div>
+            <div class="notification-actions">
+                <button onclick="markAsRead('{{ notification.id }}')">
+                    Marcar como lido
+                </button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

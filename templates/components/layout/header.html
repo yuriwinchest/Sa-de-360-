@@ -1,0 +1,24 @@
+<header>
+    <div class="header-container">
+        <div class="profile-section">
+            <div class="profile-photo">
+                <img src="{{ url_for('static', filename='assets/images/profile.jpg') }}" alt="Foto de {{ user.name if user else 'Usuário' }}">
+            </div>
+            <div class="profile-info">
+                <h1>{{ user.name if user else 'Usuário' }}</h1>
+                <p>CNS: {{ user.cns if user else 'Não informado' }}</p>
+                <p>Central de Saúde Digital</p>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}" class="nav-link">Dashboard</a>
+            <a href="{{ url_for('appointments') }}" class="nav-link">Agendamentos</a>
+            <a href="{{ url_for('health') }}" class="nav-link">Minha Saúde</a>
+            <a href="{{ url_for('family') }}" class="nav-link">Família</a>
+        </div>
+        <button class="logout-btn" onclick="handleLogout()">
+            <span class="icon">🚪</span>
+            Sair
+        </button>
+    </div>
+</header>

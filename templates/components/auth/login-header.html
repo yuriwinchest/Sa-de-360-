@@ -1,0 +1,28 @@
+<!-- /frontend/templates/components/auth/login-header.html -->
+<div class="login-header">
+    <div class="logo-circle">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="#3B82F6">
+            <path d="M19 3h-4V1h-6v2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H5V5h14v16z"/>
+            <path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z"/>
+        </svg>
+    </div>
+    <h1 class="header-title">Saúde 360</h1>
+    <p class="header-subtitle">Escolha como deseja entrar</p>
+</div>
+
+<!-- /frontend/templates/components/auth/login-form.html -->
+<div class="login-form">
+    <div class="oauth-buttons">
+        <!-- Botões OAuth -->
+        {% include 'components/auth/oauth-buttons.html' %}
+    </div>
+
+    <div class="divider">ou acesse com seus dados</div>
+
+    <form id="loginForm">
+        {% include 'components/auth/login-inputs.html' %}
+        {% include 'components/auth/login-options.html' %}
+        <button type="submit" class="login-button">Entrar</button>
+        {% include 'components/auth/register-link.html' %}
+    </form>
+</div>

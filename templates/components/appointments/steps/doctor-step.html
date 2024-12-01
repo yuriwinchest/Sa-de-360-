@@ -1,0 +1,27 @@
+<div class="scheduling-step" id="doctorStep" style="display: none;">
+    <h3>Selecione o Médico e Horário</h3>
+    <div class="doctor-selection">
+        <div class="doctor-list">
+            <div class="doctor-card" onclick="selectDoctor('1')">
+                <img src="{{ url_for('static', filename='assets/images/doctors/dr-joao.jpg') }}" alt="Dr. João Silva" class="doctor-photo">
+                <div class="doctor-info">
+                    <h4>Dr. João Silva</h4>
+                    <p>CRM: 12345</p>
+                    <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
+                </div>
+            </div>
+            <div class="doctor-card" onclick="selectDoctor('2')">
+                <img src="{{ url_for('static', filename='assets/images/doctors/dra-maria.jpg') }}" alt="Dra. Maria Santos" class="doctor-photo">
+                <div class="doctor-info">
+                    <h4>Dra. Maria Santos</h4>
+                    <p>CRM: 23456</p>
+                    <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="schedule-selection" style="display: none;">
+            {% include 'components/appointments/calendar.html' %}
+        </div>
+    </div>
+</div>

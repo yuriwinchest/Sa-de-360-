@@ -1,0 +1,40 @@
+<div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-icon">👨‍👩‍👧‍👦</div>
+        <div class="card-title">Perfis Vinculados</div>
+    </div>
+    <div class="card-content">
+        <div class="family-profiles">
+            <div class="family-member">
+                <img src="{{ url_for('static', filename='assets/images/family/joao.jpg') }}" 
+                     alt="João" class="member-photo">
+                <div class="member-info">
+                    <h3>João Silva (Filho)</h3>
+                    <p>12 anos</p>
+                    <span class="status-badge active">Vacinação em dia</span>
+                </div>
+            </div>
+            <div class="family-member">
+                <img src="{{ url_for('static', filename='assets/images/family/ana.jpg') }}" 
+                     alt="Ana" class="member-photo">
+                <div class="member-info">
+                    <h3>Ana Silva (Filha)</h3>
+                    <p>8 anos</p>
+                    <span class="status-badge pending">Vacina pendente</span>
+                </div>
+            </div>
+            <div class="family-member">
+                <img src="{{ url_for('static', filename='assets/images/family/jose.jpg') }}" 
+                     alt="José" class="member-photo">
+                <div class="member-info">
+                    <h3>José Silva (Marido)</h3>
+                    <p>45 anos</p>
+                    <span class="status-badge pending">Vacina pendente</span>
+                </div>
+            </div>
+            <button class="action-button" onclick="addFamilyMember()">
+                Adicionar Familiar
+            </button>
+        </div>
+    </div>
+</div>

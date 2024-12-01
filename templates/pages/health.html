@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Minha Saúde - Saúde 360{% endblock %}
+
+{% block content %}
+<div class="health-container">
+    <div class="health-header">
+        <h1>Minha Saúde</h1>
+        <div class="health-summary">
+            <p>Acompanhamento completo dos seus indicadores de saúde</p>
+        </div>
+    </div>
+
+    <div class="vital-signs-section">
+        <h2>Sinais Vitais</h2>
+        {% include 'components/health/vital-signs-monitor.html' %}
+        {% include 'components/health/vital-signs-history.html' %}
+    </div>
+
+    <div class="medications-section">
+        <h2>Medicamentos em Uso</h2>
+        {% include 'components/health/medication-schedule.html' %}
+        {% include 'components/health/medication-history.html' %}
+    </div>
+
+    <div class="exams-section">
+        <h2>Exames e Resultados</h2>
+        {% include 'components/health/exam-results.html' %}
+        {% include 'components/health/exam-schedule.html' %}
+    </div>
+
+    <div class="treatment-section">
+        <h2>Tratamentos em Andamento</h2>
+        {% include 'components/health/active-treatments.html' %}
+        {% include 'components/health/treatment-history.html' %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/components/health/vital-signs.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/health/medications.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/health/exams.js') }}"></script>
+<script src="{{ url_for('static', filename='js/components/health/treatments.js') }}"></script>
+{% endblock %}

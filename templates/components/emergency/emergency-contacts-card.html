@@ -1,0 +1,31 @@
+<div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-icon">📞</div>
+        <div class="card-title">Contatos de Emergência</div>
+    </div>
+    <div class="card-content">
+        <div class="emergency-contacts">
+            <div class="contact-item">
+                <h3>SAMU</h3>
+                <p>192</p>
+                <button class="action-button" onclick="makeEmergencyCall('192')">
+                    Ligar
+                </button>
+            </div>
+            <div class="contact-item">
+                <h3>Bombeiros</h3>
+                <p>193</p>
+                <button class="action-button" onclick="makeEmergencyCall('193')">
+                    Ligar
+                </button>
+            </div>
+            <div class="contact-item">
+                <h3>Contato Familiar</h3>
+                <p>João (Filho) - (11) 98765-4321</p>
+                <button class="action-button" onclick="makeEmergencyCall('11987654321')">
+                    Ligar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

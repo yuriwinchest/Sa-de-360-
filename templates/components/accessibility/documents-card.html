@@ -1,0 +1,46 @@
+<div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-icon">📄</div>
+        <div class="card-title">Documentos e Relatórios</div>
+    </div>
+    <div class="card-content">
+        <div class="documents-list">
+            <div class="document-item">
+                <div class="document-info">
+                    <span>Atestado Médico - 12/11/2024</span>
+                    <span class="document-type">PDF</span>
+                </div>
+                <div class="document-actions">
+                    <button class="action-button" onclick="printDocument('atestado-12112024')" 
+                            aria-label="Imprimir atestado médico">
+                        Imprimir
+                    </button>
+                    <button class="action-button" onclick="shareDocument('atestado-12112024')" 
+                            aria-label="Compartilhar atestado médico">
+                        Compartilhar
+                    </button>
+                </div>
+            </div>
+            <div class="document-item">
+                <div class="document-info">
+                    <span>Relatório Médico - 05/11/2024</span>
+                    <span class="document-type">PDF</span>
+                </div>
+                <div class="document-actions">
+                    <button class="action-button" onclick="printDocument('relatorio-05112024')" 
+                            aria-label="Imprimir relatório médico">
+                        Imprimir
+                    </button>
+                    <button class="action-button" onclick="shareDocument('relatorio-05112024')" 
+                            aria-label="Compartilhar relatório médico">
+                        Compartilhar
+                    </button>
+                </div>
+            </div>
+            <button class="action-button full-width" onclick="requestNewDocument()" 
+                    aria-label="Solicitar novo documento">
+                Solicitar Novo Documento
+            </button>
+        </div>
+    </div>
+</div>
